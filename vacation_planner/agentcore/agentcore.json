@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.agentcore.aws.dev/v1/agentcore.json",
+  "name": "vacationplanner",
+  "version": 1,
+  "managedBy": "CDK",
+  "tags": {
+    "agentcore:created-by": "agentcore-cli",
+    "agentcore:project-name": "vacationplanner"
+  },
+  "runtimes": [
+    {
+      "name": "vacation_planner",
+      "build": "Container",
+      "entrypoint": "src/vacation_planner/crew.py",
+      "codeLocation": "./",
+      "networkMode": "PUBLIC",
+      "protocol": "HTTP"
+    }
+  ],
+  "memories": [],
+  "credentials": [],
+  "evaluators": [],
+  "onlineEvalConfigs": [],
+  "agentCoreGateways": [],
+  "policyEngines": []
+}
