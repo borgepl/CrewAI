@@ -27,13 +27,22 @@ Dockerfile
 
 #  Setup buildx
 docker buildx create --use
+
 # Create ECR repository
 aws ecr create-repository --repository-name vacation-planner01 --region us-west-2   [provide your repo name in place of vacation-planner01]
+
+##
+739275451817.dkr.ecr.eu-west-1.amazonaws.com/cdk-hnb659fds-container-assets-739275451817-eu-west-1
+## 
+
 # Login to ECR
-aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 196715057542.dkr.ecr.us-west-2.amazonaws.com    [Replace with your AWS account number - 196715057542 and Region(if required)]
+aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin  739275451817.dkr.ecr.eu-west-1.amazonaws.com
+
+
 # Build and push [ Can take upto 30 mins on first build due to ARM 64 arch.]
-docker buildx build --platform linux/arm64 -t 196715057542.dkr.ecr.us-west-2.amazonaws.com/vacation-planner01:latest --push .
+docker buildx build --platform linux/arm64 -t 739275451817.dkr.ecr.eu-west-1.amazonaws.com/cdk-hnb659fds-container-assets-739275451817-eu-west-1:latest --push .
 [Change aws account name number and image name in place of vacation-planner01]
+
 [Important ---- > Please note it can take upto 30mins for first time build due to ARM64 arch.]
 
 # Step 6 - From the AgentCore Service - Deploy the Agentic AI App with Image in ECR
