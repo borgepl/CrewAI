@@ -10,8 +10,8 @@
   "runtimes": [
     {
       "name": "vacation_planner",
-      "build": "Container",
-      "entrypoint": "src/vacation_planner/crew.py",
+      "build": "CodeZip",
+      "entrypoint": "src/vacation_planner/strands_agent.py",
       "codeLocation": "./",
       "networkMode": "PUBLIC",
       "protocol": "HTTP"
