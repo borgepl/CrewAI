@@ -1,0 +1,5 @@
+bedrock-agentcore
+boto3==1.42.95
+strands-agents
+strands-agents-tools
+streamlit==1.56.0
